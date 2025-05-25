@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <meta
+      name="description"
+      content="赤石勇人のポートフォリオサイトです。Web開発のプロジェクトやスキルをご紹介しています。"
+    />
+    <title>赤石勇人 | Web Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,86 +17,99 @@
     />
   </head>
   <body>
-    <nav class="navbar">
-      <div class="nav-content">
-        <div class="logo">Portfolio</div>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+    <header>
+      <nav class="navbar" aria-label="メインナビゲーション">
+        <div class="nav-content">
+          <div class="logo">Portfolio</div>
+          <ul class="nav-links">
+            <li><a href="#home" aria-current="page">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1 class="fade-in">赤石勇人</h1>
-        <p class="fade-in">Web Developer</p>
-        <p class="fade-in">
-          クリエイティブなデジタルソリューションを提供します
-        </p>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <p>
-            東京を拠点に活動するWebデベロッパーです。ユーザー体験を重視した、美しく機能的なウェブサイトの制作を得意としています。
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1 class="fade-in">赤石勇人</h1>
+          <p class="fade-in">Web Developer</p>
+          <p class="fade-in">
+            クリエイティブなデジタルソリューションを提供します
           </p>
-          <div class="skills">
-            <h3>スキル</h3>
-            <ul>
-              <li>HTML5 / CSS3</li>
-              <li>JavaScript</li>
-              <li>React</li>
-              <li>UI/UXデザイン</li>
-            </ul>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-content">
+            <p>
+              東京を拠点に活動するWebデベロッパーです。ユーザー体験を重視した、美しく機能的なウェブサイトの制作を得意としています。
+            </p>
+            <div class="skills">
+              <h3>スキル</h3>
+              <ul>
+                <li>HTML5 / CSS3</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>UI/UXデザイン</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="projects" class="section">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>プロジェクト1</h3>
-            <p>Eコマースサイトのリデザイン</p>
-          </div>
-          <div class="project-card">
-            <h3>プロジェクト2</h3>
-            <p>ポートフォリオサイト制作</p>
-          </div>
-          <div class="project-card">
-            <h3>プロジェクト3</h3>
-            <p>モバイルアプリUIデザイン</p>
+      <section id="projects" class="section">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="projects-grid">
+            <article class="project-card">
+              <h3>プロジェクト1</h3>
+              <p>Eコマースサイトのリデザイン</p>
+            </article>
+            <article class="project-card">
+              <h3>プロジェクト2</h3>
+              <p>ポートフォリオサイト制作</p>
+            </article>
+            <article class="project-card">
+              <h3>プロジェクト3</h3>
+              <p>モバイルアプリUIデザイン</p>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="contact" class="section">
+      <section id="contact" class="section">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">お名前</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">メッセージ</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">送信</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <form class="contact-form">
-          <div class="form-group">
-            <input type="text" placeholder="お名前" required />
-          </div>
-          <div class="form-group">
-            <input type="email" placeholder="メールアドレス" required />
-          </div>
-          <div class="form-group">
-            <textarea placeholder="メッセージ" required></textarea>
-          </div>
-          <button type="submit" class="submit-btn">送信</button>
-        </form>
+        <p>&copy; 2024 赤石勇人. All rights reserved.</p>
       </div>
-    </section>
+    </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
   </body>
 </html>

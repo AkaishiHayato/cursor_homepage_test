@@ -1,13 +1,53 @@
+:root {
+  /* カラーパレット */
+  --color-primary: #3498db;
+  --color-primary-dark: #2980b9;
+  --color-text: #333;
+  --color-text-light: #666;
+  --color-background: #fff;
+  --color-background-alt: #f8f9fa;
+
+  /* タイポグラフィ */
+  --font-family: 'Noto Sans JP', sans-serif;
+  --font-size-base: 16px;
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 1.5rem;
+
+  /* スペーシング */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
+
+  /* ボーダー */
+  --border-radius: 5px;
+  --border-color: #ddd;
+
+  /* シャドウ */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* トランジション */
+  --transition-base: 0.3s ease;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: var(--font-family);
   line-height: 1.6;
-  color: #333;
+  color: var(--color-text);
 }
 
 /* ナビゲーションバー */
@@ -16,71 +56,69 @@ body {
   top: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
   z-index: 1000;
+  transition: background var(--transition-base);
 }
 
 .nav-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: var(--spacing-sm);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: var(--font-size-h3);
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--color-text);
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-}
-
-.nav-links li {
-  margin-left: 2rem;
+  gap: var(--spacing-md);
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #2c3e50;
+  color: var(--color-text);
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color var(--transition-base);
 }
 
 .nav-links a:hover {
-  color: #3498db;
+  color: var(--color-primary);
 }
 
 /* ヒーローセクション */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #3498db, #2c3e50);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-text));
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: var(--color-background);
 }
 
 .hero-content {
-  padding: 2rem;
+  padding: var(--spacing-md);
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+  font-size: var(--font-size-h1);
+  margin-bottom: var(--spacing-sm);
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease forwards;
 }
 
 .hero p {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: var(--font-size-h3);
+  margin-bottom: var(--spacing-xs);
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease forwards 0.3s;
@@ -88,7 +126,7 @@ body {
 
 /* セクション共通スタイル */
 .section {
-  padding: 5rem 2rem;
+  padding: var(--spacing-xl) var(--spacing-md);
 }
 
 .container {
@@ -98,33 +136,33 @@ body {
 
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #2c3e50;
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text);
 }
 
 /* About セクション */
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: var(--spacing-md);
   align-items: start;
 }
 
 .skills {
-  background: #f8f9fa;
-  padding: 2rem;
-  border-radius: 10px;
+  background: var(--color-background-alt);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
 }
 
 .skills ul {
   list-style: none;
-  margin-top: 1rem;
+  margin-top: var(--spacing-sm);
 }
 
 .skills li {
-  margin-bottom: 0.5rem;
-  padding-left: 1.5rem;
+  margin-bottom: var(--spacing-xs);
+  padding-left: var(--spacing-md);
   position: relative;
 }
 
@@ -132,22 +170,22 @@ body {
   content: '•';
   position: absolute;
   left: 0;
-  color: #3498db;
+  color: var(--color-primary);
 }
 
 /* Projects セクション */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: var(--spacing-md);
 }
 
 .project-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  background: var(--color-background);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base);
 }
 
 .project-card:hover {
@@ -161,16 +199,29 @@ body {
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   font-family: inherit;
+  transition: border-color var(--transition-base);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
 }
 
 .form-group textarea {
@@ -179,18 +230,26 @@ body {
 }
 
 .submit-btn {
-  background: #3498db;
-  color: white;
-  padding: 1rem 2rem;
+  background: var(--color-primary);
+  color: var(--color-background);
+  padding: var(--spacing-sm) var(--spacing-md);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   font-size: 1rem;
-  transition: background 0.3s ease;
+  transition: background var(--transition-base);
 }
 
 .submit-btn:hover {
-  background: #2980b9;
+  background: var(--color-primary-dark);
+}
+
+/* フッター */
+.footer {
+  background: var(--color-background-alt);
+  padding: var(--spacing-md);
+  text-align: center;
+  color: var(--color-text-light);
 }
 
 /* アニメーション */
@@ -216,25 +275,21 @@ body {
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
+  :root {
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.2rem;
+  }
+
   .nav-content {
     flex-direction: column;
     text-align: center;
   }
 
   .nav-links {
-    margin-top: 1rem;
-  }
-
-  .nav-links li {
-    margin: 0 1rem;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
+    margin-top: var(--spacing-sm);
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .about-content {
@@ -242,6 +297,6 @@ body {
   }
 
   .section {
-    padding: 3rem 1rem;
+    padding: var(--spacing-lg) var(--spacing-sm);
   }
 }
