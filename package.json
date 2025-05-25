@@ -1,0 +1,11 @@
+{
+  "name": "cursor-homepage-test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,scss,html,json}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
